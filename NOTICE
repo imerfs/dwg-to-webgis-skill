@@ -1,0 +1,30 @@
+dwg-to-webgis
+Copyright 2026 imerfs
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This project adapts material from the following open-source projects. It is
+not endorsed by their authors. Changes made are listed below.
+
+1. isaaccorley/geospatial-skills, skill "gdal"
+   https://github.com/isaaccorley/geospatial-skills
+   Licensed under the Apache License, Version 2.0.
+   Adapted: the general approach (inspect first, write new output, validate)
+   and several ogr2ogr / ogrinfo command patterns.
+
+2. jaakla/openmapstack-skills, skill "open-map-stack"
+   https://github.com/jaakla/openmapstack-skills
+   MIT License.
+   Copyright (c) its respective authors. See the upstream repository for the
+   full license text.
+   Adapted: default format and CRS guidance (GeoPackage/GeoParquet, no
+   Shapefile output, metric work in projected CRS), the PMTiles/tippecanoe/
+   MapLibre delivery pattern, coordinate-order guidance and the list of
+   anti-patterns.
+
+Changes and additions in this project (not from the sources above):
+- A CAD-specific workflow: DWG to DXF, CRS and unit confirmation, DXF
+  inspection with ezdxf, handling of closed polylines and CAD layers.
+- scripts/render_dxf.py, a layer-aware DXF to PNG renderer.
+- Notes on GDAL DXF driver behaviour observed in testing.
+- Rewritten and condensed text; no upstream file is included verbatim.
